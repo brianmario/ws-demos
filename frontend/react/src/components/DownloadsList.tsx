@@ -6,7 +6,7 @@ const DownloadsList = () => {
 
   useEffect(() => {
     messages.forEach(({ id, progress }) => {
-      const element = document.getElementById(`download:${id}`);
+      const element = document.getElementById(`download_${id}`);
 
       const progressElement = element.querySelector("progress");
       progressElement.value = progress;
@@ -17,11 +17,11 @@ const DownloadsList = () => {
     <div id="downloads">
       <div id="download_1">
         <span>Inside Out 2 (2024)</span>
-        <progress value="0" max="1"></progress>
+        <progress value="0" max="100"></progress>
       </div>
       <div id="download_2">
         <span>Inception (2010)</span>
-        <progress value="0" max="1"></progress>
+        <progress value="0" max="100"></progress>
       </div>
     </div>
   );
