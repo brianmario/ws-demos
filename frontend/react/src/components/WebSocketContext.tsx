@@ -6,7 +6,7 @@ const WebSocketContext = createContext();
 export const WebSocketProvider = ({ children }) => {
   const [messages, setMessages] = useState([]);
   const { sendJsonMessage, lastJsonMessage } = useWebSocket(
-    "ws://localhost:1234/react",
+    "ws://localhost:1234/ws/react",
     {
       shouldReconnect: () => true, // Automatically reconnect
     },

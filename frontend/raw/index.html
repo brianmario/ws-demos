@@ -6,7 +6,7 @@
         <script type="javascript">
             // In this version the websocket will send JSON state updates which we will use to update the DOM.
             document.addEventListener('DOMContentLoaded', () => {
-                const socket = new WebSocket('ws://localhost:1234/raw');
+                const socket = new WebSocket('ws://localhost:1234/ws/raw');
 
                 socket.addEventListener('message', (event) => {
                   const data = JSON.parse(event.data);
