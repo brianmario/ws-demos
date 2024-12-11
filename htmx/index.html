@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://unpkg.com/htmx.org"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
+    </head>
+    <!-- In this version, the websocket will send DOM updates which HTMX will swap out for us -->
+    <body hx-ext="ws" ws-connect="http://localhost:1234/htmx">
+        <div id="downloads">
+            <div id="download:1">
+                <span>Inside Out 2 (2024)</span>
+                <progress value="0" max="1"></progress>
+            </div>
+
+            <div id="download:2">
+                <span>Inception (2010)</span>
+                <progress value="0" max="1"></progress>
+            </div>
+        </div>
+    </body>
+</html>
