@@ -3,11 +3,11 @@ module ApplicationCable
     def connect
       # Differentiate based on path or parameters
       if request.path == "/ws/raw"
-        @frontend = :raw
+        transmit '{"id": 1, "progress": 30}'
       elsif request.path == "/ws/htmx"
-        @frontend = :htmx
+        transmit '<progress id="download_1_progress" max="100" value="30"></progress>'
       elsif request.path == "/ws/react"
-        @frontend = :react
+        transmit '{"id": 1, "progress": 30}'
       else
         reject_unauthorized_connection
       end
