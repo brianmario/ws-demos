@@ -7,12 +7,9 @@ const DownloadsList = () => {
   useEffect(() => {
     messages.forEach(({ id, progress }) => {
       const element = document.getElementById(`download:${id}`);
-      if (element) {
-        const progressElement = element.querySelector("progress");
-        if (progressElement) {
-          progressElement.value = progress;
-        }
-      }
+
+      const progressElement = element.querySelector("progress");
+      progressElement.value = progress;
     });
   }, [messages]);
 
