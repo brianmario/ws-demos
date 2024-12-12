@@ -5,7 +5,7 @@
         <script src="https://unpkg.com/htmx.org"></script>
         <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
     </head>
-    <!-- In this version, the websocket will send DOM updates which HTMX will swap out for us -->
+    <!-- In this version, the websocket will send raw HTML DOM updates which HTMX will swap out for us -->
     <body hx-ext="ws" ws-connect="http://localhost:3000/ws/htmx">
         <div id="downloads">
             <div id="download_1">
@@ -16,7 +16,6 @@
                     max="100"
                 ></progress>
             </div>
-
             <div id="download_2">
                 <span>Inception (2010)</span>
                 <progress

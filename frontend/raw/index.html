@@ -2,19 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-
         <script>
             // In this version the websocket will send JSON state updates which we will use to update the DOM.
             document.addEventListener("DOMContentLoaded", () => {
                 const socket = new WebSocket("ws://localhost:3000/ws/raw");
-
                 socket.addEventListener("message", (event) => {
                     const data = JSON.parse(event.data);
-
                     const downloadEl = document.getElementById(
                         `download_${data.id}`,
                     );
-
                     const progressEl = downloadEl.querySelector("progress");
                     progressEl.value = data.progress;
                 });
@@ -27,7 +23,6 @@
                 <span>Inside Out 2 (2024)</span>
                 <progress value="0" max="100"></progress>
             </div>
-
             <div id="download_2">
                 <span>Inception (2010)</span>
                 <progress value="0" max="100"></progress>
